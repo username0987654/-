@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈화면</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='susers.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="rectangle-47">
+            <div class="grade">학년 | {{ current_user.grade }}</div>
+            <div class="name">이름 | {{ current_user.username }}</div>
+            <div class="selected-subjects">
+                내가 선택한 과목<br>
+                <span class="subject">{{ current_user.subject }}</span>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card" onclick="location.href='{{ url_for('users') }}'">
+                <div class="card-text">
+                    <p>배우고 싶어요!</p>
+                    <h2>선배 찾기</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-text">
+                    <p>교실 현황 체크</p>
+                    <h2>교실 현황</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-text">
+                    <p>나의 글로네이컬</p>
+                    <h2>GloNaCal 확인하기</h2>
+                </div>
+            </div>
+            <div class="card" onclick="location.href='{{ url_for('upindex') }}'">
+                <div class="card-text">
+                    <p>빠르게 질문하고 싶어요</p>
+                    <h2>퀵 러넥트</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-text">
+                    <p>활동 서류 발급받자!</p>
+                    <h2>학교 공식<br>이수증 출력하기</h2>
+                    <a href="이수증.html"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

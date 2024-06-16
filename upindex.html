@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upindex.css') }}">
+</head>
+<body>
+    <h1>퀵 러넥트에 오신 것을 환영합니다!</h1>
+    <div class="posts">
+        {% for post in posts %}
+        <div class="post">
+            <img src="{{ url_for('uploaded_file', filename=post.image_filename) }}" alt="Post Image">
+            <p>{{ post.text }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="upload-form">
+        <h2>모르는 문제를 사진 찍어 올리거나 풀이를 찍어 올려주세요.</h2>
+        <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" required>
+            <label for="text">Text:</label>
+            <textarea id="text" name="text" rows="4" required></textarea>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

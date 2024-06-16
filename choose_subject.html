@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과목 선택</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='choose_subject.css') }}">
+</head>
+<body>
+    <div class="choose-container">
+        <h2>저는<br>이걸 가르치고 싶어요!</h2>
+        <form id="subject-form" action="{{ url_for('choose_subject') }}" method="POST">
+            <!-- 국어 과목 -->
+            <div class="subject-category">
+                <h3>국어 과목</h3>
+                <div class="subjects">
+                    <label class="subject-button korean">
+                        <input type="checkbox" name="subject" value="국어"><span>국어<br>고1</span>
+                    </label>
+                    <label class="subject-button korean">
+                        <input type="checkbox" name="subject" value="문학"><span>문학<br>고2</span>
+                    </label>
+                    <label class="subject-button korean">
+                        <input type="checkbox" name="subject" value="독서"><span>독서<br>고2</span>
+                    </label>
+                    <label class="subject-button korean">
+                        <input type="checkbox" name="subject" value="토론실"><span>토론실<br>고1</span>
+                    </label>
+                    <label class="subject-button korean">
+                        <input type="checkbox" name="subject" value="작문의 실제"><span>작문의 실제<br>고2</span>
+                    </label>
+                    <label class="subject-button korean">
+                        <input type="checkbox" name="subject" value="21세기 문학탐구"><span>21세기 문학탐구<br>고3</span>
+                    </label>
+                    <label class="subject-button korean">
+                        <input type="checkbox" name="subject" value="심층융합 독서"><span>심층융합 독서<br>고3</span>
+                    </label>
+                </div>
+            </div>
+            <!-- 수학 과목 -->
+            <div class="subject-category">
+                <h3>수학 과목</h3>
+                <div class="subjects">
+                    <label class="subject-button math">
+                        <input type="checkbox" name="subject" value="수학 (상)"><span>수학 (상)<br>고1</span>
+                    </label>
+                    <label class="subject-button math">
+                        <input type="checkbox" name="subject" value="수학 (하)"><span>수학 (하)<br>고1</span>
+                    </label>
+                    <label class="subject-button math">
+                        <input type="checkbox" name="subject" value="수학 1"><span>수학 1<br>고1</span>
+                    </label>
+                    <label class="subject-button math">
+                        <input type="checkbox" name="subject" value="수학 2"><span>수학 2<br>고2</span>
+                    </label>
+                    <label class="subject-button math">
+                        <input type="checkbox" name="subject" value="확률과 통계"><span>확률과 통계<br>고2</span>
+                    </label>
+                    <label class="subject-button math">
+                        <input type="checkbox" name="subject" value="미적분"><span>미적분<br>고2</span>
+                    </label>
+                    <label class="subject-button math">
+                        <input type="checkbox" name="subject" value="고급 수학"><span>고급 수학<br>고3</span>
+                    </label>
+                    <label class="subject-button math">
+                        <input type="checkbox" name="subject" value="기하"><span>기하<br>고3</span>
+                    </label>
+                </div>
+            </div>
+            <!-- 사회 과목 -->
+            <div class="subject-category">
+                <h3>사회 과목</h3>
+                <div class="subjects">
+                    <label class="subject-button social">
+                        <input type="checkbox" name="subject" value="통합사회"><span>통합사회<br>고1</span>
+                    </label>
+                    <label class="subject-button social">
+                        <input type="checkbox" name="subject" value="한국사"><span>한국사<br>고1</span>
+                    </label>
+                    <label class="subject-button social">
+                        <input type="checkbox" name="subject" value="경제"><span>경제<br>고2</span>
+                    </label>
+                    <label class="subject-button social">
+                        <input type="checkbox" name="subject" value="생활과 윤리"><span>생활과 윤리<br>고2</span>
+                    </label>
+                    <label class="subject-button social">
+                        <input type="checkbox" name="subject" value="정치와 법"><span>정치와 법<br>고2</span>
+                    </label>
+                    <label class="subject-button social">
+                        <input type="checkbox" name="subject" value="세계지리"><span>세계지리<br>고2</span>
+                    </label>
+                    <label class="subject-button social">
+                        <input type="checkbox" name="subject" value="세계사"><span>세계사<br>고2</span>
+                    </label>
+                    <label class="subject-button social">
+                        <input type="checkbox" name="subject" value="윤리와 사상"><span>윤리와 사상<br>고3</span>
+                    </label>
+                </div>
+            </div>
+            <!-- 과학 과목 -->
+            <div class="subject-category">
+                <h3>과학 과목</h3>
+                <div class="subjects">
+                    <label class="subject-button science">
+                        <input type="checkbox" name="subject" value="통합과학"><span>통합과학<br>고1</span>
+                    </label>
+                    <label class="subject-button science">
+                        <input type="checkbox" name="subject" value="물리학 1"><span>물리학 1<br>고2</span>
+                    </label>
+                    <label class="subject-button science">
+                        <input type="checkbox" name="subject" value="화학 1"><span>화학 1<br>고2</span>
+                    </label>
+                    <label class="subject-button science">
+                        <input type="checkbox" name="subject" value="생명과학 1"><span>생명과학 1<br>고2</span>
+                    </label>
+                    <label class="subject-button science">
+                        <input type="checkbox" name="subject" value="물리학 2"><span>물리학 2<br>고3</span>
+                    </label>
+                    <label class="subject-button science">
+                        <input type="checkbox" name="subject" value="화학 2"><span>화학 2<br>고3</span>
+                    </label>
+                    <label class="subject-button science">
+                        <input type="checkbox" name="subject" value="생명과학 2"><span>생명과학 2<br>고3</span>
+                    </label>
+                </div>
+            </div>
+            <!-- 영어 과목 -->
+            <div class="subject-category">
+                <h3>영어 과목</h3>
+                <div class="subjects">
+                    <label class="subject-button english">
+                        <input type="checkbox" name="subject" value="Biz"><span>Biz<br>Business Studies</span>
+                    </label>
+                    <label class="subject-button english">
+                        <input type="checkbox" name="subject" value="Bio"><span>Bio<br>Intro. Biology</span>
+                    </label>
+                    <label class="subject-button english">
+                        <input type="checkbox" name="subject" value="Chem"><span>Chem<br>Intro. Chemistry</span>
+                    </label>
+                    <label class="subject-button english">
+                        <input type="checkbox" name="subject" value="H&IR"><span>H&IR<br>History & Int. Relations</span>
+                    </label>
+                    <label class="subject-button english">
+                        <input type="checkbox" name="subject" value="Aca. Read"><span>Aca. Read<br>Academic Reading</span>
+                    </label>
+                    <label class="subject-button english">
+                        <input type="checkbox" name="subject" value="Lib.Art"><span>Lib.Art<br>Liberal Arts</span>
+                    </label>
+                    <label class="subject-button english">
+                        <input type="checkbox" name="subject" value="베1"><span>베1</span>
+                    </label>
+                    <label class="subject-button english">
+                        <input type="checkbox" name="subject" value="베2"><span>베2</span>
+                    </label>
+                </div>
+            </div>
+            <div class="actions">
+                <p>선택하셨다면,</p>
+                <button type="submit" class="action-btn">시작하기</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

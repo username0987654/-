@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='users.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>우리학교 선배 찾기</h1>
+        <form method="GET" action="{{ url_for('users') }}">
+            <input type="text" name="search" placeholder="검색_과목, 희망진로, 전공 등">
+            <button type="submit">Search</button>
+        </form>
+        <div class="user-list">
+            {% for user in users %}
+            <div class="user-card">
+                <div class="user-info">
+                    <p>학년: {{ user.grade }}</p>
+                    <p>이름: {{ user.username }}</p>
+                    <p>잘하는 과목: {{ user.subject }}</p>
+                </div>
+                <div class="user-action">
+                    <a href="mailto:{{ user.email }}?subject=Mentoring Request&body={{ user.username }}님,%0D%0A%0D%0A{{ current_user.username }} 이(가) 멘토링을 하고 싶어 합니다1." target="_blank">
+                        <button type="button">신청</button>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

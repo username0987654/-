@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upindex.css') }}">
+</head>
+<body>
+    <h1>Upload Image and Text</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" required>
+        <label for="text">Text:</label>
+        <textarea id="text" name="text" rows="4" required></textarea>
+        <button type="submit">Upload</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
